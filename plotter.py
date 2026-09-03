@@ -46,7 +46,7 @@ def plot_tput_cdf(df, outpath="tput_cdf.png"):
     return t5
 
 def plot_summary(df, outpath="summary.png"):
-    """THroughput와 BLER 추이를 2단 subplot 한 장으로 요약한다."""
+    """Throughput와 BLER 추이를 2단 subplot 한 장으로 요약한다."""
 
     fig, axes = plt.subplots(2, 1, figsize=(8, 8))
     axes[0].plot(df["tput"].values)
