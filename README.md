@@ -31,8 +31,21 @@ SINR-BLER curve by MCS (against a 10$ BLER target)
 The image file bler_curve.png is in the files.
 
 ------------
+Testing
+------------
+pip install pytest pytest-html
+
+python3 -m pytest -v                       # run all tests
+
+python3 -m pytest -v -m "not slow"         # skip slow tests
+
+python3 -m pytest --junitxml=results.xml   #CI-friendly report
+
+------------
 Requirements
 ------------
 Python 3.9+
 
 pandas, matplotlib, openpyxl
+
+pytest, pytest-html (for testing)

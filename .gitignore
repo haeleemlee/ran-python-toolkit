@@ -5,3 +5,6 @@ __pycache__/
 .DS_Store
 logs/
 du.log
+results.xml
+report.html
+.pytest_cache/

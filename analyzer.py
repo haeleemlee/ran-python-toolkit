@@ -24,9 +24,13 @@ def summarize_by_mcs(df):
     )
     return summary
 
+def max_tput_by_mcs(df, mcs):
+    """특정 MCS에서 기록된 최대 throughput을 변환한다."""
+    return df[df["mcs"] == mcs]["tput"].max()
 
 if __name__== "__main__":
     df = build_dataframe()
+    print(df.shape)
 
     print(df.head())
     print(df.info())
@@ -46,5 +50,7 @@ if __name__== "__main__":
     summary = summarize_by_mcs(df)    
     print(summary) 
 
-    df.to_csv("results.csv", index=False)
-    df.to_excel("results.xlsx", index=False)
+    maxTputByMcs = max_tput_by_mcs(df, 15)
+    print(f"Max Tput by MCS=15: {maxTputByMcs}")
+   # df.to_csv("results.csv", index=False)
+   # df.to_excel("results.xlsx", index=False)
